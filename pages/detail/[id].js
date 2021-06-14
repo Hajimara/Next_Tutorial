@@ -16,7 +16,7 @@ const Post = ({ item, name }) => {
                 </Loader>
             </div>
         );
-    }ZZ
+    }
 
     return (
         <>
