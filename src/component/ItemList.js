@@ -4,14 +4,13 @@ import Link from "next/link";
 import styles from './ItemList.module.css'
 
 export default function List({ list }) {
-    console.log(list);
     return (
         <div>
             <Grid columns={3}>
                 <Grid.Row>
                     {list.map((item) => (
                         <Grid.Column key={item.id}>
-                            <Link href={`/view/${item.id}`}>
+                            <Link href="/view/[id]" as={`/view/${item.id}`}>
                                 <a>
                                     <div className={styles.wrap}>
                                         <img
@@ -21,8 +20,8 @@ export default function List({ list }) {
                                         />
                                         <strong className={styles.tit_item}>{item.name}</strong>
                                         <span className={styles.txt_info}>
-                      {item.category} {item.product_type}
-                    </span>
+                                          {item.category} {item.product_type}
+                                        </span>
                                         <strong className={styles.num_price}>${item.price}</strong>
                                     </div>
                                 </a>
